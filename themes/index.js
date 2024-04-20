@@ -462,6 +462,13 @@ export const themes = {
     icon_color: "ffffff",
     bg_color: "35,4158d0,c850c0,ffcc70",
   },
+  "modus-operandi": {
+    title_color: "006800",
+    icon_color: "006800",
+    text_color: "000000",
+    bg_color: "ffffff",
+    border_color: "9f9f9f",
+  },
   "modus-vivendi": {
     title_color: "feacd0",
     icon_color: "feacd0",
