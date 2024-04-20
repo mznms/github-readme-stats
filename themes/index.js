@@ -463,8 +463,8 @@ export const themes = {
     bg_color: "35,4158d0,c850c0,ffcc70",
   },
   "modus-operandi": {
-    title_color: "721045",
-    icon_color: "721045",
+    title_color: "006800",
+    icon_color: "006800",
     text_color: "000000",
     bg_color: "ffffff",
     border_color: "9f9f9f",
