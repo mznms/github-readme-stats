@@ -462,6 +462,13 @@ export const themes = {
     icon_color: "ffffff",
     bg_color: "35,4158d0,c850c0,ffcc70",
   },
+  "modus-vivendi": {
+    title_color: "feacd0",
+    icon_color: "feacd0",
+    text_color: "ffffff",
+    bg_color: "000000",
+    border_color: "646464",
+  },
 };
 
 export default themes;
