@@ -79,7 +79,7 @@ export default async (req, res) => {
     //   size_weight,
     //   count_weight,
     // );
-    const topLangs = await mapToRecord(getCommitLanguage(username, []));
+    const topLangs = mapToRecord(await getCommitLanguage(username, []));
 
     let cacheSeconds = clampValue(
       parseInt(cache_seconds || CONSTANTS.CARD_CACHE_SECONDS, 10),
@@ -97,8 +97,17 @@ export default async (req, res) => {
       }, s-maxage=${cacheSeconds}, stale-while-revalidate=${CONSTANTS.ONE_DAY}`,
     );
 
+    const outputArray = [];
+    topLangs.languageMap.forEach((element) => {
+      outputArray.push({
+        name: element.name,
+        color: element.color,
+        size: element.size,
+      });
+    });
+
     return res.send(
-      renderTopLanguages(topLangs, {
+      renderTopLanguages(outputArray, {
         custom_title,
         hide_title: parseBoolean(hide_title),
         hide_border: parseBoolean(hide_border),
@@ -125,7 +134,7 @@ export default async (req, res) => {
       }, stale-while-revalidate=${CONSTANTS.ONE_DAY}`,
     ); // Use lower cache period for errors.
     return res.send(
-      renderError(err.message, err.secondaryMessage, {
+      renderError(err.stack, err.message, err.secondaryMessage, {
         title_color,
         text_color,
         bg_color,
