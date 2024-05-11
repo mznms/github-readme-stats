@@ -1,5 +1,5 @@
 /* eslint-disable require-jsdoc */
-import request from "../common/request";
+import request from "../common/request.js";
 
 export class CommitLanguageInfo {
   name; // : string;
@@ -73,7 +73,7 @@ const fetcher = (token /*: string*/, variables /*: any*/) => {
 };
 
 // repos per language
-export async function getCommitLanguage(
+export default async function getCommitLanguage(
   username /*: string*/,
   exclude /*: Array<string>*/,
 ) /*: Promise<CommitLanguages>*/ {
@@ -108,5 +108,3 @@ export async function getCommitLanguage(
 
   return commitLanguages;
 }
-
-module.exports = { CommitLanguageInfo, CommitLanguages, getCommitLanguage };

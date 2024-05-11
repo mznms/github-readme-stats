@@ -10,11 +10,11 @@ import {
 } from "../src/common/utils.js";
 // import { fetchTopLanguages } from "../src/fetchers/top-languages-fetcher.js";
 import { isLocaleAvailable } from "../src/translations.js";
-import { getCommitLanguage } from "../src/cards/commits-per-language.js";
+import getCommitLanguage from "../src/cards/commits-per-language.js";
 
 function mapToRecord(map) {
   const record = {};
-  for (const [key, value] of map.entries()) {
+  for (const [key, value] of Object.entries(map)) {
     record[key] = value;
   }
   return record;
